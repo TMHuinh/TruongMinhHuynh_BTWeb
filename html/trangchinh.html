@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUINH - SHOP</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.5.1-web/css/all.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <scrip src="../js/bootstrap.bundle.min.js">
+        </script>
+        <style>
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+            .product-name {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                min-height: 3.6em;
+                line-height: 1.8em;
+                font-size: 16px;
+                overflow: hidden;
+            }
+
+            .modal-content {
+                border-radius: 10px;
+            }
+
+            .modal-header {
+                background-color: rgb(252, 109, 109);
+                color: #fff;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .modal-footer {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            .btn-primary {
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var searchForm = document.getElementById('searchForm');
+
+                searchForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var searchTerm = document.getElementById('searchInput').value.trim();
+
+                    if (searchTerm !== '') {
+                        alert('Đang tìm kiếm sản phẩm có tên: ' + searchTerm);
+                        var modal = new bootstrap.Modal(document.getElementById('searchModal'));
+                        modal.hide();
+                    }
+                });
+            });
+
+        </script>
+
+</head>
+
+<body>
+    <!-- header..............  -->
+    <header>
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-md-3 col-12">
+                    <a href="trangchinh.html">
+                        <img src="../img/logo3.webp" class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm"
+                            aria-label="Nhập từ khóa tìm kiếm" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <span class="input-group-text" id="basic-addon2" data-bs-toggle="modal"
+                            data-bs-target="#searchModal">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="fs-2 text-danger">
+                                        <i class="fa-solid fa-square-phone"></i>
+                                    </div>
+
+                                </div>
+                                <div class="col-9">
+                                    Hotline <br>
+                                    <a href="#" title="Gọi"><strong class="text-danger">012345678</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="fs-2 text-danger">
+                                        <i class="fa-regular fa-circle-user"></i>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    Xin chào <br>
+                                    <a href="#"><strong class="text-warning">User</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="row ">
+                        <div class="col">
+                            <a href="#" title="Thông báo" class="position-relative">
+                                <span class="fs-3"><i class="fa-regular fa-heart"></i></span>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    99+
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" title="Cài đặt" class="position-relative">
+                                <span class="fs-3"><i class="fa-regular fa-sun"></i></span>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="giohang.html" title="Giỏ hàng" class="position-relative">
+                                <span class="fs-3"><i class="fa-solid fa-cart-shopping"></i></span>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                </span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- menu................ -->
+    <section class="nav bg-danger">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <div class="container-fluid bg-danger">
+                            <a class="navbar-brand d-md-none d-block" href="#">DANH MỤC</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 nav-fill">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white active" aria-current="page"
+                                            href="trangchinh.html">Trang chủ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="gioithieu.html">Giới thiệu</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Sản phẩm
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="noi_chao.html">Nồi chảo</a></li>
+                                            <li><a class="dropdown-item" href="dao_keo.html">Dao, kéo</a></li>
+                                            <li><a class="dropdown-item" href="ly_tach.html">Ly - tách</a></li>
+                                            <li><a class="dropdown-item" href="dungculambanh.html">Dụng cụ làm bánh</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="phkienttbanan.html">Phụ kiện và trang trí
+                                                    bàn ăn</a></li>
+                                            <li><a class="dropdown-item" href="phukienbep.html">Phụ kiện bếp</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="danhmuckhac.html">Danh mục khác</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Tin tức
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="tinmoinhat.html">Tin mới nhất</a></li>
+                                            <li><a class="dropdown-item" href="thongtinkhuyenmai.html">Thông tin khuyến
+                                                    mãi</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="cauhoithuonggap.html">Câu hỏi thường
+                                            gặp</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="lienhe.html">Liên hệ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="sitemap.html">Sitemap</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section.....................  -->
+    <section class="mycontent my-3">
+        <div class="container">
+            <div class="slider mb-3">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../img/slider_8_desktop.webp" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/slider_1_desktop.webp" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/slider_4_desktop.webp" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="list-product my-3 mt-5">
+                <h3 class="text-success"><strong>MẪU MỚI VỀ</strong></h3>
+                <div class="row">
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="chitietsanpham.html" title="Bộ Dụng Cụ Và Thiết Bị Nhà Bếp KITCHENAID - 15 Món - Màu Đỏ">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/bodungcu.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Bộ Dụng Cụ Và Thiết Bị Nhà Bếp KITCHENAID - 15 Món - Màu Đỏ</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">2.288.150<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">2.339.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Dụng Cụ Xay Cắt Rau Củ Durachefs - 14.5cm">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/mayxay.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Dụng Cụ Xay Cắt Rau Củ Durachefs - 14.5cm</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">359.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">500.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Dao Nhật KAI - Dao Santoku Seki Magoroku Wakatake - 14.5cm">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/dao.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Dao Nhật KAI - Dao Santoku Seki Magoroku Wakatake - 14.5cm</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">223.400<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">425.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Xẻng Chiên Ngắn KITCHENAID Coreline - Màu Đỏ">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/xengchien.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Xẻng Chiên Ngắn KITCHENAID Coreline - Màu Đỏ</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">299.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">300.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Bộ Tô Nhựa Có Nắp Đậy KITCHENAID - Màu Đỏ - 4 Cái">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/to.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Bộ Tô Nhựa Có Nắp Đậy KITCHENAID - Màu Đỏ - 4 Cái</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">350.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">420.800<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Bordallo - Đĩa Súp - Dark Grey - 24cm">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/dia.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Bordallo - Đĩa Súp - Dark Grey - 24cm</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">435.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through"><sup></sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Aderia - Rimlet - Bộ Tô Salad Thuỷ Tinh - 12cm - 3 Cái - Bộ 3 Cái">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/tosu.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Aderia - Rimlet - Bộ Tô Salad Thuỷ Tinh - 12cm - 3 Cái - Bộ 3 Cái</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">972.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">1.520.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Chảo Gang LODGE - 8.89cm">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/chao.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Chảo Gang LODGE - 8.89cm</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">499.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">500.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Staub - Ly Gốm 350ml - Xanh Đen">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/lygom.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Staub - Ly Gốm 350ml - Xanh Đen</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">756.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">800.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Viners - Muỗng Bàn Ăn Glamour - 20.0cm">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/muong.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Viners - Muỗng Bàn Ăn Glamour - 20.0cm</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">4.299.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">5.000.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Đánh Trứng KITCHENAID Classic - Màu Đen">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/danhtrung.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Đánh Trứng KITCHENAID Classic - Màu Đen</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">299.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">300.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="ZWILLING - Kéo Nhà Bếp Twin L">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/keo.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>ZWILLING - Kéo Nhà Bếp Twin L</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">500.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through"><sup></sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="text-warning-emphasis">
+
+            <div class="list-product my-3 mt-5">
+                <h3 class="text-success"><strong>GỢI Ý HÔM NAY
+                    </strong></h3>
+                <div class="row">
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Chảo Gang Hai Quai STAUB Màu Đỏ Cherry - 20cm">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/chao-hai-quai-mau-do-staub-26cm-b-1.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Chảo Gang Hai Quai STAUB Màu Đỏ Cherry - 20cm</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">3.539.450<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">3.799.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Dụng Cụ Mài Dao Kim Cương Và Gốm KAI Nhật Bản">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/maidao.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Dụng Cụ Mài Dao Kim Cương Và Gốm KAI Nhật Bản</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">500.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through"><sup></sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="chitietsanpham.html" title="Nồi inox DURACHEFS 7L">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/noi-inox-durachef-7l.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Nồi inox DURACHEFS 7L</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">1.539.450<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">2.799.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Aderia - Cera Bake - Khay Nướng Bánh Hình Chữ Nhật Sâu Lòng - 0.8L (2023)">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/khay.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Aderia - Cera Bake - Khay Nướng Bánh Hình Chữ Nhật Sâu Lòng - 0.8L
+                                        (2023)</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">864.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through"><sup></sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="ZWILLING - Bộ Dao Professional S - 3 Món - OPEN BOX">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/3dao.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>ZWILLING - Bộ Dao Professional S - 3 Món - OPEN BOX</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">6.990.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">7.500.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Nồi Gang STAUB Tròn Kèm Xửng Hấp - Màu Đỏ Cherry - 24cm">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/noigang.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Nồi Gang STAUB Tròn Kèm Xửng Hấp - Màu Đỏ Cherry - 24cm</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">11.000.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">12.000.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Chảo Gang Nướng Vuông STAUB 2 Quai Màu Đỏ Cherry - 28x28cm (2.3L)">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/chaonuong.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Chảo Gang Nướng Vuông STAUB 2 Quai Màu Đỏ Cherry - 28x28cm (2.3L)</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">6.972.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">7.520.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Nồi Gang STAUB Oval Mussel Màu Đen - 25cm (2L)">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/noigangden.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Nồi Gang STAUB Oval Mussel Màu Đen - 25cm (2L)</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">7.499.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">7.800.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Bộ Dao Bít Tết ZWILLING Steak Màu Nâu - 4 Cái">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/daobittet.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Bộ Dao Bít Tết ZWILLING Steak Màu Nâu - 4 Cái</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">4.756.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">4.900.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Tô Bí Ngô Staub - Màu Cam - 12.2cm">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/to-bi-ngo-staub-mau-cam-12-2cm-1.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Tô Bí Ngô Staub - Màu Cam - 12.2cm</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">1.299.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">2.000.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="ZWILLING - Muỗng Múc Trái Cây ZWILLING Pro - 17.5cm">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/muongtraicay.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>ZWILLING - Muỗng Múc Trái Cây ZWILLING Pro - 17.5cm</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">250.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">300.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <a href="#" title="Nồi Gang LODGE Heat-Treated Để Bàn - 0.35L">
+                            <div class="product-item border border-dark p-2 rounded">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="../img/noiganglog.webp" alt="">
+                                </div>
+                                <hr>
+                                <div class="product-name">
+                                    <strong>Nồi Gang LODGE Heat-Treated Để Bàn - 0.35L</strong>
+                                </div>
+                                <div class="product-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="text-danger">2.500.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong class="text-decoration-line-through">3.000.000<sup>đ</sup>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-body-tertiary" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="container p-4">
+            <section class="mb-4  text-center">
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
+
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-google"></i></a>
+
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-instagram"></i></a>
+
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-github"></i></a>
+            </section>
+
+            <section class="">
+                <form action="">
+                    <div class="row d-flex justify-content-center">
+
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Đăng ký nhận bản tin của chúng tôi</strong>
+                            </p>
+                        </div>
+
+                        <div class="col-md-5 col-12">
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="email" id="form5Example24" class="form-control"
+                                    placeholder="Email address" />
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4 bg-info">
+                                Đăng kí
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </section>
+
+            <hr>
+            <section class="mb-4">
+                <p>
+                    <strong>Huinh - Mua sắm dễ dàng, nhanh chóng và tiết kiệm</strong>
+                </p>
+                <p>
+                    <span>Huinh là địa chỉ đáng tin cậy với hàng triệu sản phẩm từ những thương hiệu uy tín, cửa hàng
+                        chuyên dụng trong lĩnh vực đồ dùng và thiết bị nhà bếp. Từ nồi, chảo, dụng cụ làm bánh cho đến
+                        các thiết bị điện như máy xay sinh tố, chúng tôi đều có đầy đủ. Đặc biệt, dịch vụ giao hàng siêu
+                        tốc của chúng tôi sẽ mang đến cho bạn trải nghiệm mua sắm trực tuyến thuận lợi nhất.</span>
+                </p>
+
+                <p>
+                    <strong>Ưu đãi hấp dẫn, khuyến mãi sốc</strong>
+                </p>
+                <p>
+                    <span>Bạn muốn săn ngay những ưu đãi hấp dẫn nhất? Huinh chính là lựa chọn hàng đầu của bạn! Với
+                        hàng triệu sản phẩm trong chương trình Freeship+, bạn không cần phải lo lắng về mã freeship.
+                        Chúng tôi cam kết cung cấp giá trị tốt nhất cho mỗi đơn hàng của bạn.</span>
+                </p>
+            </section>
+            <hr>
+
+            <section class="">
+                <div class="row ">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">VỀ HUINH </h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="text-body" href="gioithieu.html">Giới Thiệu</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Tuyển Dụng</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="cauhoithuonggap.html">Câu Hỏi Thường Gặp</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Góp Ý - Phản Ánh</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Tiêu Chí Bán Hàng</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Đối Tác - Khách Hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">THÔNG TIN & HƯỚNG DẪN</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="text-body" href="#!">Hướng Dẫn Mua Online</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Dành Cho Doanh Nghiệp</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Phương Thức Thanh Toán</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Quy Trình Xử Lý Đơn Hàng</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">CHÍNH SÁCH</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="text-body" href="#!">Chính sách Kiểm, Đổi Trả, Bảo Hành</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Chính Sách Vận Chuyển</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Chính Sách Bảo Mật</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Thông Tin Thanh Toán</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Chính Sách Khiếu Nại</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">THƯƠNG HIỆU</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="text-body" href="#!">Garis</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Euro Gold</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Modena</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Imundex</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section class="col-lg-6 mb-4">
+                <p>
+                    <strong>THIÊN ĐƯỜNG MUA SẮM HUINH</strong>
+                </p>
+                <p>
+                    Công ty cổ phần thương mại HUINH
+                    Chứng nhận ĐKKD số: 99999999 do sở KH & ĐT TP.Hồ Chí Minh cấp. <br>
+                    Địa chỉ: Tòa nhà Landmark 81, địa chỉ 208 Nguyễn Hữu Cảnh, phường 22, quận Bình Thạnh, Thành Phố Hồ
+                    Chí Minh. <br>
+                    Điện thoại: 012345678 - Email: support@huinh.com.
+                </p>
+            </section>
+        </div>
+
+
+        <div class="text-center p-3" style="background-color: rgba(13, 2, 2, 0.05);">
+            © 2020 BẢN QUYỀN THUỘC VỀ:
+            <a class="text-reset fw-bold" href="#">huinh.com</a>
+        </div>
+    </footer>
+
+    <!-- modal tim kiem -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Tìm kiếm sản phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="searchForm" class="d-flex align-items-center">
+                        <div class="flex-grow-1 me-2">
+                            <input type="text" class="form-control" id="searchInput" name="searchInput"
+                                placeholder="Nhập tên sản phẩm...">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

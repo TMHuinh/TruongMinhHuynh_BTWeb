@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.5.1-web/css/all.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <scrip src="../js/bootstrap.bundle.min.js">
+        </script>
+        <style>
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+            .product-name {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                min-height: 3.6em;
+                line-height: 1.8em;
+                font-size: 16px;
+                overflow: hidden;
+            }
+
+            .modal-content {
+                border-radius: 10px;
+            }
+
+            .modal-header {
+                background-color: rgb(252, 109, 109);
+                color: #fff;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .modal-footer {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            .btn-primary {
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var searchForm = document.getElementById('searchForm');
+
+                searchForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var searchTerm = document.getElementById('searchInput').value.trim();
+
+                    if (searchTerm !== '') {
+                        alert('Đang tìm kiếm sản phẩm có tên: ' + searchTerm);
+                        var modal = new bootstrap.Modal(document.getElementById('searchModal'));
+                        modal.hide();
+                    }
+                });
+            });
+
+        </script>
+
+</head>
+
+<body>
+    <!-- header..............  -->
+    <header>
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-md-3 col-12">
+                    <a href="trangchinh.html">
+                        <img src="../img/logo3.webp" class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm"
+                            aria-label="Nhập từ khóa tìm kiếm" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <span class="input-group-text" id="basic-addon2" data-bs-toggle="modal"
+                            data-bs-target="#searchModal">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="fs-2 text-danger">
+                                        <i class="fa-solid fa-square-phone"></i>
+                                    </div>
+
+                                </div>
+                                <div class="col-9">
+                                    Hotline <br>
+                                    <a href="#" title="Gọi"><strong class="text-danger">012345678</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="fs-2 text-danger">
+                                        <i class="fa-regular fa-circle-user"></i>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    Xin chào <br>
+                                    <a href="#"><strong class="text-warning">User</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="row ">
+                        <div class="col">
+                            <a href="#" title="Thông báo" class="position-relative">
+                                <span class="fs-3"><i class="fa-regular fa-heart"></i></span>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    99+
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" title="Cài đặt" class="position-relative">
+                                <span class="fs-3"><i class="fa-regular fa-sun"></i></span>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="giohang.html" title="Giỏ hàng" class="position-relative">
+                                <span class="fs-3"><i class="fa-solid fa-cart-shopping"></i></span>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                </span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- menu................ -->
+    <section class="nav bg-danger">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <div class="container-fluid bg-danger">
+                            <a class="navbar-brand d-md-none d-block" href="#">DANH MỤC</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 nav-fill">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white active" aria-current="page"
+                                            href="trangchinh.html">Trang chủ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="gioithieu.html">Giới thiệu</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Sản phẩm
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="noi_chao.html">Nồi chảo</a></li>
+                                            <li><a class="dropdown-item" href="dao_keo.html">Dao, kéo</a></li>
+                                            <li><a class="dropdown-item" href="ly_tach.html">Ly - tách</a></li>
+                                            <li><a class="dropdown-item" href="dungculambanh.html">Dụng cụ làm bánh</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="phkienttbanan.html">Phụ kiện và trang trí
+                                                    bàn ăn</a></li>
+                                            <li><a class="dropdown-item" href="phukienbep.html">Phụ kiện bếp</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="danhmuckhac.html">Danh mục khác</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Tin tức
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="tinmoinhat.html">Tin mới nhất</a></li>
+                                            <li><a class="dropdown-item" href="thongtinkhuyenmai.html">Thông tin khuyến
+                                                    mãi</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="cauhoithuonggap.html">Câu hỏi thường
+                                            gặp</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="lienhe.html">Liên hệ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="sitemap.html">Sitemap</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section.....................  -->
+    <section class="mycontent my-3">
+        <div class="container">
+            <h1 class="mt-5 mb-4 text-danger">Sitemap</h1>
+            <ul id="sitemap" class="list-group">
+                <li class="list-group-item"><a href="trangchinh.html">Trang chủ</a></li>
+                <li class="list-group-item"><a href="gioithieu.html">Giới thiệu</a></li>
+                <li class="list-group-item"><a href="noi_chao.html">Nồi chảo</a></li>
+                <li class="list-group-item"><a href="dao_keo.html">Dao kéo</a></li>
+                <li class="list-group-item"><a href="ly_tach.html">Ly tách</a></li>
+                <li class="list-group-item"><a href="dungculambanh.html">Dụng cụ làm bánh</a></li>
+                <li class="list-group-item"><a href="phkienttbanan.html">Phụ kiện và trang trí bàn ăn</a></li>
+                <li class="list-group-item"><a href="phukienbep.html">Phụ kiện bếp</a></li>
+                <li class="list-group-item"><a href="danhmuckhac.html">Danh mục khác</a></li>
+                <li class="list-group-item"><a href="tinmoinhat.html">Tin mới nhất</a></li>
+                <li class="list-group-item"><a href="thongtinkhuyenmai.html">Thông tin khuyến mãi</a></li>
+                <li class="list-group-item"><a href="cauhoithuonggap.html">Câu hỏi thường gặp</a></li>
+                <li class="list-group-item"><a href="lienhe.html">Liên hệ</a></li>
+                <li class="list-group-item"><a href="giohang.html">Giỏ hàng</a></li>
+                <li class="list-group-item"><a href="chitietsanpham.html">Chi tiết sản phẩm</a></li>
+                <li class="list-group-item"><a href="DangKi.html">Đăng kí</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-body-tertiary" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="container p-4">
+            <section class="mb-4  text-center">
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
+
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-google"></i></a>
+
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-instagram"></i></a>
+
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-github"></i></a>
+            </section>
+
+            <section class="">
+                <form action="">
+                    <div class="row d-flex justify-content-center">
+
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Đăng ký nhận bản tin của chúng tôi</strong>
+                            </p>
+                        </div>
+
+                        <div class="col-md-5 col-12">
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="email" id="form5Example24" class="form-control"
+                                    placeholder="Email address" />
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4 bg-info">
+                                Đăng kí
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </section>
+
+            <hr>
+            <section class="mb-4">
+                <p>
+                    <strong>Huinh - Mua sắm dễ dàng, nhanh chóng và tiết kiệm</strong>
+                </p>
+                <p>
+                    <span>Huinh là địa chỉ đáng tin cậy với hàng triệu sản phẩm từ những thương hiệu uy tín, cửa hàng
+                        chuyên dụng trong lĩnh vực đồ dùng và thiết bị nhà bếp. Từ nồi, chảo, dụng cụ làm bánh cho đến
+                        các thiết bị điện như máy xay sinh tố, chúng tôi đều có đầy đủ. Đặc biệt, dịch vụ giao hàng siêu
+                        tốc của chúng tôi sẽ mang đến cho bạn trải nghiệm mua sắm trực tuyến thuận lợi nhất.</span>
+                </p>
+
+                <p>
+                    <strong>Ưu đãi hấp dẫn, khuyến mãi sốc</strong>
+                </p>
+                <p>
+                    <span>Bạn muốn săn ngay những ưu đãi hấp dẫn nhất? Huinh chính là lựa chọn hàng đầu của bạn! Với
+                        hàng triệu sản phẩm trong chương trình Freeship+, bạn không cần phải lo lắng về mã freeship.
+                        Chúng tôi cam kết cung cấp giá trị tốt nhất cho mỗi đơn hàng của bạn.</span>
+                </p>
+            </section>
+            <hr>
+
+            <section class="">
+                <div class="row ">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">VỀ HUINH </h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="text-body" href="gioithieu.html">Giới Thiệu</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Tuyển Dụng</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="cauhoithuonggap.html">Câu Hỏi Thường Gặp</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Góp Ý - Phản Ánh</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Tiêu Chí Bán Hàng</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Đối Tác - Khách Hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">THÔNG TIN & HƯỚNG DẪN</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="text-body" href="#!">Hướng Dẫn Mua Online</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Dành Cho Doanh Nghiệp</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Phương Thức Thanh Toán</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Quy Trình Xử Lý Đơn Hàng</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">CHÍNH SÁCH</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="text-body" href="#!">Chính sách Kiểm, Đổi Trả, Bảo Hành</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Chính Sách Vận Chuyển</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Chính Sách Bảo Mật</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Thông Tin Thanh Toán</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Chính Sách Khiếu Nại</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">THƯƠNG HIỆU</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="text-body" href="#!">Garis</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Euro Gold</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Modena</a>
+                            </li>
+                            <li>
+                                <a class="text-body" href="#!">Imundex</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section class="col-lg-6 mb-4">
+                <p>
+                    <strong>THIÊN ĐƯỜNG MUA SẮM HUINH</strong>
+                </p>
+                <p>
+                    Công ty cổ phần thương mại HUINH
+                    Chứng nhận ĐKKD số: 99999999 do sở KH & ĐT TP.Hồ Chí Minh cấp. <br>
+                    Địa chỉ: Tòa nhà Landmark 81, địa chỉ 208 Nguyễn Hữu Cảnh, phường 22, quận Bình Thạnh, Thành Phố Hồ
+                    Chí Minh. <br>
+                    Điện thoại: 012345678 - Email: support@huinh.com.
+                </p>
+            </section>
+        </div>
+
+
+        <div class="text-center p-3" style="background-color: rgba(13, 2, 2, 0.05);">
+            © 2020 BẢN QUYỀN THUỘC VỀ:
+            <a class="text-reset fw-bold" href="#">huinh.com</a>
+        </div>
+    </footer>
+
+    <!-- modal tim kiem -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Tìm kiếm sản phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="searchForm" class="d-flex align-items-center">
+                        <div class="flex-grow-1 me-2">
+                            <input type="text" class="form-control" id="searchInput" name="searchInput"
+                                placeholder="Nhập tên sản phẩm...">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
